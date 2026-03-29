@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rafdhan Putra | Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
+html{scroll-behavior:smooth}
+body{background:#0b0b0b;color:#f5f5f5}
+
+/* NAVBAR */
+header{
+position:fixed;top:0;width:100%;
+background:rgba(11,11,11,.95);
+padding:14px 8%;
+display:flex;justify-content:space-between;
+align-items:center;z-index:100;
+border-bottom:1px solid #7f1d1d
+}
+
+header h1{color:#ef4444;font-size:22px}
+
+nav a{
+color:#f5f5f5;
+margin-left:25px;
+text-decoration:none;
+font-size:14px;
+padding:6px 14px;
+border-radius:20px;
+transition:.3s
+}
+
+nav a:hover,
+nav a.active{
+background:#7f1d1d
+}
+
+/* SECTION */
+section{
+padding:90px 8%;
+transition:.4s
+}
+
+/* SECTION ACTIVE */
+section.active{
+background:rgba(127,29,29,.08)
+}
+
+/* HOME */
+#home{padding-top:130px}
+
+.home-wrapper{
+display:grid;
+grid-template-columns:1.1fr 0.9fr;
+gap:50px;
+align-items:center
+}
+
+#home h2{font-size:34px;margin-bottom:15px}
+#home span{color:#ef4444}
+
+#home p{
+line-height:1.8;
+color:#d4d4d4;
+max-width:550px
+}
+
+/* BUTTON */
+.btn{
+display:inline-block;
+padding:11px 30px;
+background:#ef4444;
+color:#000;
+border-radius:30px;
+text-decoration:none;
+font-weight:600
+}
+
+/* SLIDER */
+.slider-area{
+display:flex;
+flex-direction:column;
+align-items:center;
+gap:18px
+}
+
+.slider-box{
+position:relative;
+width:100%;
+background:#141414;
+border:1px solid #7f1d1d;
+border-radius:18px;
+overflow:hidden
+}
+
+.slider-img{
+width:100%;
+height:260px;
+object-fit:cover
+}
+
+/* ARROWS */
+.slider-btn{
+position:absolute;
+top:50%;
+transform:translateY(-50%);
+background:rgba(0,0,0,.6);
+border:none;
+color:#ef4444;
+font-size:26px;
+width:42px;
+height:42px;
+cursor:pointer;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center
+}
+
+.slider-btn:hover{
+background:#ef4444;
+color:#000
+}
+
+.prev{left:12px}
+.next{right:12px}
+
+/* ABOUT */
+#about h2{font-size:32px;margin-bottom:15px}
+
+#about p{
+line-height:1.8;
+color:#d4d4d4;
+margin-bottom:25px;
+max-width:700px
+}
+
+.socials{
+display:flex;
+gap:15px;
+margin-bottom:25px;
+flex-wrap:wrap
+}
+
+.socials a{
+color:#ef4444;
+border:1px solid #ef4444;
+padding:9px 20px;
+border-radius:25px;
+text-decoration:none
+}
+
+.socials a:hover{
+background:#ef4444;
+color:#000
+}
+
+.skills{
+display:flex;
+gap:12px;
+flex-wrap:wrap
+}
+
+.skill a{
+padding:10px 20px;
+border:1px solid #7f1d1d;
+border-radius:12px;
+color:#ef4444;
+text-decoration:none
+}
+
+.skill a:hover{
+background:#ef4444;
+color:#000
+}
+
+/* PROJECTS */
+.projects-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px
+}
+
+.project-card{
+background:#1a1a1a;
+border-radius:15px;
+border:1px solid #7f1d1d;
+overflow:hidden
+}
+
+.project-card img{
+width:100%;
+height:200px;
+object-fit:cover
+}
+
+.project-content{padding:20px}
+.project-content h3{color:#ef4444;margin-bottom:10px}
+
+/* FOOTER */
+footer{
+text-align:center;
+padding:20px;
+background:#000;
+color:#9ca3af;
+margin-top:40px
+}
+
+/* MOBILE */
+@media(max-width:900px){
+.home-wrapper{
+grid-template-columns:1fr;
+gap:35px
+}
+.slider-img{height:220px}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>★</h1>
+<nav>
+<a href="#home" class="nav-link">Home</a>
+<a href="#about" class="nav-link">About</a>
+<a href="#projects" class="nav-link">Projects</a>
+</nav>
+</header>
+
+<!-- HOME -->
+<section id="home">
+<div class="home-wrapper">
+
+<div>
+<h2>Halo, Saya <span>Rafdhan Putra</span></h2>
+<p>
+Pelajar yang tertarik pada sains dan teknologi,
+khususnya robotik, mikrokontroler,
+dan pengembangan website sebagai media dokumentasi karya.
+</p>
+</div>
+
+<div class="slider-area">
+<div class="slider-box">
+<button class="slider-btn prev" onclick="prevSlide()">❮</button>
+<img id="sliderImage" src="images/project1.jpg" class="slider-img">
+<button class="slider-btn next" onclick="nextSlide()">❯</button>
+</div>
+<a href="#projects" class="btn">Lihat Project</a>
+</div>
+
+</div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+<h2>Tentang Saya</h2>
+<p>
+Ketertarikan saya pada teknologi berawal dari rasa ingin tahu
+tentang sistem otomatis. Saya mempelajari Arduino, ESP32,
+serta web development untuk menuangkan ide dan proyek.
+</p>
+
+<div class="socials">
+<a href="https://www.instagram.com/theredone._" target="_blank">Instagram</a>
+<a href="mailto:thered.one016@gmail.com">Gmail</a>
+</div>
+
+<div class="skills">
+<div class="skill"><a href="#">Arduino</a></div>
+<div class="skill"><a href="#">ESP32</a></div>
+<div class="skill"><a href="#">Robotika</a></div>
+<div class="skill"><a href="#">Fisika</a></div>
+<div class="skill"><a href="#">Kimia</a></div>
+</div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+<h2>Project Saya</h2>
+
+<div class="projects-grid">
+<div class="project-card">
+<img src="images/project1.jpg">
+<div class="project-content">
+<h3>Tempat Sampah Otomatis</h3>
+<p>Berbasis Arduino & sensor ultrasonik.</p>
+</div>
+</div>
+
+<div class="project-card">
+<img src="images/project2.jpg">
+<div class="project-content">
+<h3>3D Modeling</h3>
+<p>Blender & Blockbench.</p>
+</div>
+</div>
+</div>
+</section>
+
+<footer>
+© 2026 Rafdhan Putra • Portfolio
+</footer>
+
+<script>
+/* SLIDER */
+const images=[
+"images/project1.jpg",
+"images/project2.jpg",
+"images/project3.jpg"
+];
+let index=0;
+const img=document.getElementById("sliderImage");
+
+function nextSlide(){
+index=(index+1)%images.length;
+img.src=images[index];
+}
+function prevSlide(){
+index=(index-1+images.length)%images.length;
+img.src=images[index];
+}
+
+/* ACTIVE NAV & SECTION */
+const sections=document.querySelectorAll("section");
+const navLinks=document.querySelectorAll(".nav-link");
+
+window.addEventListener("scroll",()=>{
+let current="";
+sections.forEach(sec=>{
+if(window.scrollY>=sec.offsetTop-140){
+current=sec.id;
+}
+});
+
+sections.forEach(sec=>sec.classList.remove("active"));
+navLinks.forEach(link=>link.classList.remove("active"));
+
+if(current){
+document.getElementById(current).classList.add("active");
+document.querySelector(`a[href="#${current}"]`).classList.add("active");
+}
+});
+</script>
+
+</body>
+</html>
